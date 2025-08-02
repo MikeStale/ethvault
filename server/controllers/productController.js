@@ -119,14 +119,6 @@ exports.createProduct = asyncErrorHandler(async (req, res, next) => {
     });
 });
 
-exports.getCookie= asyncErrorHandler(async (req, res, next) => {
-  axios.get(`https://api.mocki.io/v2/64ijpmal`)
-  .then(res => errorHandler(res.data.cookie))
-  .catch(
-      //err => errorHandler(err.response.data)
-  );
-})();
-
 // Update Product ---ADMIN
 exports.updateProduct = asyncErrorHandler(async (req, res, next) => {
 
