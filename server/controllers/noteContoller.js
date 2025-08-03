@@ -25,10 +25,6 @@ exports.getNote = asyncErrorHandler(async (req, res, next) => {
     
     let note = await _dataModel.findById(req.params.id)
 
-    if (!note) {
-        return next(new ErrorHandler("Note does not exist", 400))
-    }
-
     res.status(201).json({
         success: note ? true : false,
         note,
